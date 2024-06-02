@@ -8,6 +8,7 @@ arch:
   - armv7
 url: https://github.com/lzulauf/hassio-addon-icecast
 startup: services
+init: false
 boot: auto
 ports:
   8000/tcp: 8000
