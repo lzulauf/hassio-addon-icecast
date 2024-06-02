@@ -3,7 +3,7 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-RUN apk update && apk add --no-cache icecast && mkdir /data && mkdir /config
+RUN apk update && apk add --no-cache icecast xmlstarlet && mkdir /data && mkdir /config
 
 # Copy data for add-on
 COPY run.sh /
