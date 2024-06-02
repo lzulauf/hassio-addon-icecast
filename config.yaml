@@ -1,0 +1,28 @@
+name: Icecast Server
+version: 0.1.0
+slug: icecast_server
+description: >
+  An Icecast server to run alongside home assistant. Allows hosting network audio streams.
+arch:
+  - amd64
+  - armv7
+url: https://github.com/lzulauf/hassio-addon-icecast
+startup: services
+boot: auto
+ports:
+  8000/tcp: 8000
+ports_description:
+  8000/tcp: Icecast connect and communicate port
+map:
+  - ssl
+stage: experimental
+options:
+  adminpassword: ""
+  sourcepassword: ""
+  certfile: "/ssl/fullchain.pem"
+  keyfile: "/ssl/privkey.pem"
+schema: 
+  adminpassword: str
+  sourcepassword: str
+  certfile: str
+  keyfile: str
