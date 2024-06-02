@@ -22,11 +22,9 @@ options:
   sourcepassword: "hackme"
   relaypassword: "hackme"
   certfile: "/ssl/fullchain.pem"
-  keyfile: "/ssl/privkey.pem"
 schema: 
   adminuser: str
   adminpassword: str
   sourcepassword: str
   relaypassword: str
   certfile: str
-  keyfile: str
