@@ -13,7 +13,6 @@ ADD icecast.xml /etc/icecast.xml
 
 VOLUME ["/data", "/config"]
 
-EXPOSE 64738/udp
-EXPOSE 64738/tcp
+EXPOSE 8000/tcp
 
 CMD ["/run.sh"]
