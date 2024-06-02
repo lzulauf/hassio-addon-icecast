@@ -9,7 +9,7 @@ RUN apk update && apk add --no-cache icecast && mkdir /data && mkdir /config
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-ADD icecast.xml /etc/icecast2/icecast.xml
+ADD icecast.xml /etc/icecast.xml
 
 VOLUME ["/data", "/config"]
 
