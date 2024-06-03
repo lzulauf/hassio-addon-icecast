@@ -21,6 +21,6 @@ ESCAPED_CERTFILE="$(echo ${CERTFILE} | sed 's/\"/\\\"/g')"
 xmlstarlet ed --inplace --subnode icecast/paths --type elem --name ssl-certificate --value "$ESCAPED_CERTFILE" /etc/icecast.xml 
 
 # For debugging only
-cat /etc/icecast.xml
+# cat /etc/icecast.xml
 
 /usr/bin/icecast -c /etc/icecast.xml
