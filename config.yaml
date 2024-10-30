@@ -11,14 +11,14 @@ startup: services
 init: false
 boot: auto
 ports:
-  8000/tcp: 8000
+  8000/tcp: 8987
 ports_description:
   8000/tcp: Icecast connect and communicate port
 ingress: true
-ingress_port: 8987
+ingress_port: 8000
 ingress_stream: true
 map:
-  - ssl
+  - type: ssl
 stage: experimental
 options:
   adminuser: "admin"
