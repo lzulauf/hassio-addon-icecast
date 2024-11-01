@@ -1,5 +1,5 @@
 name: Icecast Server
-version: 0.1.1
+version: 0.2.0
 slug: icecast_server
 description: >
   An Icecast server to run alongside home assistant. Allows hosting network audio streams.
