@@ -1,5 +1,5 @@
 name: Icecast Server
-version: 0.2.0
+version: 0.2.1
 slug: icecast_server
 description: >
   An Icecast server to run alongside home assistant. Allows hosting network audio streams.
@@ -18,8 +18,8 @@ ingress: true
 ingress_port: 8000
 ingress_stream: true
 map:
-  - type: ssl
-  - type: addon_config:rw
+  - ssl
+  - addon_config:rw
 stage: experimental
 options:
   adminuser: "admin"
