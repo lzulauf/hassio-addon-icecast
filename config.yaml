@@ -19,6 +19,7 @@ ingress_port: 8000
 ingress_stream: true
 map:
   - type: ssl
+  - type: addon_config:rw
 stage: experimental
 options:
   adminuser: "admin"
