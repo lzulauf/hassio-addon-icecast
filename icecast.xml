@@ -195,7 +195,7 @@
 
         <!-- Note that if <chroot> is turned on below, these paths must both
              be relative to the new root, not the original root -->
-        <logdir>/config</logdir>
+        <logdir>/var/log/icecast</logdir>
         <webroot>/usr/share/icecast/web</webroot>
         <adminroot>/usr/share/icecast/admin</adminroot>
         <!-- <pidfile>/usr/share/icecast/icecast.pid</pidfile> -->
@@ -234,10 +234,9 @@
 
     <security>
         <chroot>0</chroot>
-        <!--<changeowner>
+        <changeowner>
             <user>icecast</user>
             <group>icecast</group>
         </changeowner>
-        -->
     </security>
 </icecast>
