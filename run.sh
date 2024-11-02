@@ -1,5 +1,8 @@
 #!/usr/bin/with-contenv bashio
 
+echo "Userid: $(id -u)"
+echo "Groupid: $(id -g)"
+
 ADMINUSER="$(bashio::config 'adminuser')"
 ESCAPED_ADMINUSER="$(echo ${ADMINUSER} | sed 's/\"/\\\"/g')"
 xmlstarlet ed --inplace --update icecast/authentication/admin-user --value "$ESCAPED_ADMINUSER" /etc/icecast.xml
