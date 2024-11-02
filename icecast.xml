@@ -234,9 +234,10 @@
 
     <security>
         <chroot>0</chroot>
-        <changeowner>
+        <!--<changeowner>
             <user>icecast</user>
             <group>icecast</group>
         </changeowner>
+        -->
     </security>
 </icecast>
