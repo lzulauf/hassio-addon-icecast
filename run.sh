@@ -1,7 +1,13 @@
 #!/usr/bin/with-contenv bashio
 
-echo "Userid: $(id -u)"
-echo "Groupid: $(id -g)"
+CURTIME=$(date)
+echo "STARTUP $CURTIME"
+chmod a+rw /config/access.log
+chmod a+rw /config/error.log
+chmod a+rw /config/playlist.log
+echo "STARTUP $CURTIME" >> /config/access.log
+echo "STARTUP $CURTIME" >> /config/error.log
+echo "STARTUP $CURTIME" >> /config/playlist.log
 
 ADMINUSER="$(bashio::config 'adminuser')"
 ESCAPED_ADMINUSER="$(echo ${ADMINUSER} | sed 's/\"/\\\"/g')"
@@ -21,9 +27,6 @@ xmlstarlet ed --inplace --update icecast/authentication/relay-password --value "
 
 CERTFILE="$(bashio::config 'certfile')"
 ESCAPED_CERTFILE="$(echo ${CERTFILE} | sed 's/\"/\\\"/g')"
-xmlstarlet ed --inplace --subnode icecast/paths --type elem --name ssl-certificate --value "$ESCAPED_CERTFILE" /etc/icecast.xml 
-
-# For debugging only
-# cat /etc/icecast.xml
+xmlstarlet ed --inplace --subnode icecast/paths --type elem --name ssl-certificate --value "$ESCAPED_CERTFILE" /etc/icecast.xml
 
 /usr/bin/icecast -c /etc/icecast.xml
