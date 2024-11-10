@@ -2,12 +2,16 @@
 
 CURTIME=$(date)
 echo "STARTUP $CURTIME"
-chmod a+rw /config/access.log
-chmod a+rw /config/error.log
-chmod a+rw /config/playlist.log
+
+# Ensure the log files exist prior to ensuring icecast user has access
 echo "STARTUP $CURTIME" >> /config/access.log
 echo "STARTUP $CURTIME" >> /config/error.log
 echo "STARTUP $CURTIME" >> /config/playlist.log
+
+# Ensure icecast user has access
+chmod a+rw /config/access.log
+chmod a+rw /config/error.log
+chmod a+rw /config/playlist.log
 
 ADMINUSER="$(bashio::config 'adminuser')"
 ESCAPED_ADMINUSER="$(echo ${ADMINUSER} | sed 's/\"/\\\"/g')"
