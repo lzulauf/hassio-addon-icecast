@@ -1,12 +1,11 @@
 name: Icecast Server
-version: 0.3.2-dev2
+version: 0.3.2-dev3
 slug: icecast_server
 description: >
   An Icecast server to run alongside home assistant. Allows hosting network audio streams.
 arch:
   - aarch64
   - amd64
-  - armv7
 url: https://github.com/lzulauf/hassio-addon-icecast
 startup: services
 init: false
